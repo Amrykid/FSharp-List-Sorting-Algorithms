@@ -9,11 +9,11 @@ let rec print_list lst =
 
 let rec merge_sort lst = 
   let rec halve lst =
-    let rec zip lst =
+    let rec take_two lst =
       match lst with
       | [] -> []
       | [a] -> [(a, Int32.MinValue)] //Int32.MinValue is used because I can't do (a,)
-      | a::b::tail -> (a,b) :: zip(tail)
+      | a::b::tail -> (a,b) :: take_two(tail)
 
     let rec first x =
       match x with
@@ -28,7 +28,7 @@ let rec merge_sort lst =
       | (_, b)::tail -> b :: second tail
 
     //convert list into (a,b) tuples: e.g. [1;2;3;4] => [(1,2), (3,4)]
-    let r = zip lst
+    let r = take_two lst
     //grab all of the first values from the tuples and returns a list
     //e.g. [(1,2),(3,4)] => [1;3]
     let f = first r
