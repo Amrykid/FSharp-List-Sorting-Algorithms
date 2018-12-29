@@ -32,7 +32,7 @@ let rec merge_sort lst =
     //grab all of the first values from the tuples and returns a list
     //e.g. [(1,2),(3,4)] => [1;3]
     let f = first r
-    //grab all of the first values from the tuples and returns a list
+    //grab all of the second values from the tuples and returns a list
     //e.g. [(1,2),(3,4)] => [2;4]
     let s = second r
 
